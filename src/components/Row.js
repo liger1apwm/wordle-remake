@@ -1,3 +1,4 @@
+import "../styles/Keyboard.css"
 
 function handleClick(e) {
     console.log(e.target.value)
@@ -8,7 +9,7 @@ function Row(props) {
     const row_num = props.row_num
     if(row_num === 1){
         return(
-            <div>
+            <div className="row">
                 <button onClick= {handleClick} value="q">q</button>
                 <button onClick= {handleClick} value="w">w</button>
                 <button onClick= {handleClick} value="e">e</button>
@@ -24,7 +25,7 @@ function Row(props) {
     }
     if(row_num === 2){
         return(
-            <div>
+            <div className="row">
                 <button onClick= {handleClick} value="a">a</button>
                 <button onClick= {handleClick} value="s">s</button>
                 <button onClick= {handleClick} value="d">d</button>
@@ -34,13 +35,13 @@ function Row(props) {
                 <button onClick= {handleClick} value="j">j</button>
                 <button onClick= {handleClick} value="k">k</button>
                 <button onClick= {handleClick} value="l">l</button>
-            </div>
+            </div >
             
         )
     }
     if(row_num === 3){
         return(
-            <div>
+            <div className="row">
                 <button onClick= {handleClick} value="↵" >enter</button>
                 <button onClick= {handleClick} value="z" >z</button>
                 <button onClick= {handleClick} value="x" >x</button>
@@ -49,7 +50,7 @@ function Row(props) {
                 <button onClick= {handleClick} value="b" >b</button>
                 <button onClick= {handleClick} value="n" >n</button>
                 <button onClick= {handleClick} value="m" >m</button>
-                <button onClick= {handleClick} value="bksp" >bksp</button>
+                <button onClick= {handleClick} value="delete" >delete</button>
             </div>
             
         )

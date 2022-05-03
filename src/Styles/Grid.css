@@ -1,12 +1,28 @@
 
 .App {
+    text-align: center;
     background-color: white;
     width: 100vw;
     height: 100vh;
-    /* display: flex; */
     color: black;
+
+}
+
+nav {
+    height: 60px;
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid grey;
+    display: grid;
+    place-items: center;
   }
   
+  nav h1 {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    color: black;
+    font-size: 45px;
+  }
 
 .grid-row{
     width: 255px;
@@ -15,9 +31,13 @@
     justify-content: space-around;
 }
 
-#grid{
+.grid{
     width: 255px;
     height: 295px;
+    place-content: center;
+    place-items: center;
+    justify-content: center;
+
   
 }
 

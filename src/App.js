@@ -1,5 +1,5 @@
 import Grid from "./Components/Grid";
-
+import "./App.css"
 
 
 function App(){
@@ -9,6 +9,7 @@ return (
     <nav>
       <h1> Wordle </h1>
     </nav>
+    
       < Grid />
   </div>
 );

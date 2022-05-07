@@ -1,19 +1,18 @@
 
 import './App.css';
-import Keyboard from './components/Keyboard';
-import Grid from './components/Grid';
+// import Keyboard from './components/Keyboard';
+// import Grid from './components/Grid';
+import Container from './components/appContainer';
+
 
 function App() {
+
+  // console.log("Hi")
   return (
     <div className="App">
-      <nav>
-        <h3 >WORDLE</h3>
-      </nav>
+      
+        <Container />
         
-        <Grid></Grid>
-        
-        
-        <Keyboard> </Keyboard>
     </div>
   );
 }

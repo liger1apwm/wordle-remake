@@ -1,12 +1,13 @@
 import "../styles/Keyboard.css"
 
-function handleClick(e) {
-    console.log(e.target.value)
-}
+
 
 
 function Row(props) {
     const row_num = props.row_num
+    function handleClick(e) {
+        props.handleKey(e.currentTarget.value)
+    }
     if(row_num === 1){
         return(
             <div className="row">

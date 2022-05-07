@@ -1,14 +1,23 @@
+import React from 'react'
 import "../styles/Grid.css"
 import Square from "./Grid-square"
 
-function GridRow(){
+const GenerateRow = (props) =>{
+    const rows = props.letterGrid.map((letter, index) => {
+        return(
+            <Square key={index} keyPressed={letter}></Square>
+
+        )
+    
+    })
+    return <div className="grid-row">{rows}</div>
+}
+
+function GridRow(props){
+    
     return(
      <div className="grid-row">
-        <Square></Square>
-        <Square></Square>
-        <Square></Square>
-        <Square></Square>
-        <Square></Square>
+        <GenerateRow letterGrid={props.letterGrid}></GenerateRow>
 
      </div>
     )

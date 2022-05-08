@@ -42,7 +42,8 @@ function Container(props) {
     let handleKey = (props) =>{
         console.log("before ",props)
         setKeyPressed(props)
-        if(indexTried <5){
+        if(indexTried <5 && props !== "delete"){
+            console.log(indexTried)
             letterGrid[rowTried][indexTried] = props
             setIndexTried(indexTried + 1)
         }
@@ -54,6 +55,18 @@ function Container(props) {
             }
             
             alert("you pressed enter")
+        }
+        else if(indexTried <=5 && props === "delete"){
+            console.log(indexTried)
+            
+            if(indexTried-1 >= 0){
+                setIndexTried(indexTried - 1)
+                letterGrid[rowTried][indexTried -1] = ""
+            }
+            
+            
+            // console.log(indexTried)
+
         }
         // console.log("After ",prevCount)
     }

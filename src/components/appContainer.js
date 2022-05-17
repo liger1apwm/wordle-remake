@@ -49,9 +49,13 @@ function Container(props) {
 
   const correctAnswer = ["w", "o", "r", "l", "d"];
 
+ 
+
   let handleKey = (props) => {
     console.log("before ", props);
     setKeyPressed(props);
+    let green_counter = 0;
+    
     if (indexTried < 5 && props !== "delete") {
       console.log(indexTried);
       letterGrid[rowTried][indexTried] = props;
@@ -59,6 +63,7 @@ function Container(props) {
     }
     while (indexTried === 5 && props === "↵") {
       if (rowTried < 6) {
+        // row_counter = row_counter +1;
         setRowTried(rowTried + 1);
         setIndexTried(0);
       }
@@ -67,36 +72,52 @@ function Container(props) {
 
       for (let j = 0; j <= 4; j++) {
         console.log(j);
-        if (newRowGrid[0][j] === correctAnswer[j]) {
-          console.log(newRowGrid[0][j]);
-          letterGrid[0][j] = (
+        if (newRowGrid[rowTried][j] === correctAnswer[j]) {
+          console.log(newRowGrid[rowTried][j]);
+          green_counter = green_counter + 1;
+          console.log("counter", green_counter);
+          letterGrid[rowTried][j] = (
             <div className="squareEntered" style={greenStyle}>
-              <h3 className="gridText">{letterGrid[0][j]}</h3>
+              <h3 className="gridText">{letterGrid[rowTried][j]}</h3>
             </div>
           );
         } else {
           if (
-            newRowGrid[0][j] === "w" ||
-            newRowGrid[0][j] === "o" ||
-            newRowGrid[0][j] === "r" ||
-            newRowGrid[0][j] === "l" ||
-            newRowGrid[0][j] === "d"
+            newRowGrid[rowTried][j] === "w" ||
+            newRowGrid[rowTried][j] === "o" ||
+            newRowGrid[rowTried][j] === "r" ||
+            newRowGrid[rowTried][j] === "l" ||
+            newRowGrid[rowTried][j] === "d"
           ) {
-            letterGrid[0][j] = (
+            letterGrid[rowTried][j] = (
               <div className="squareEntered" style={yellowStyle}>
-                <h3 className="gridText">{letterGrid[0][j]}</h3>
+                <h3 className="gridText">{letterGrid[rowTried][j]}</h3>
               </div>
             );
           } else {
-            return (letterGrid[0][j] = (
+            letterGrid[rowTried][j] = (
               <div className="squareEntered" style={grayStyle}>
-                <h3 className="gridText">{letterGrid[0][j]}</h3>
+                <h3 className="gridText">{letterGrid[rowTried][j]}</h3>
               </div>
-            ));
+            );
           }
+        
         }
+        
       }
+      
+      break
     }
+    if(green_counter === 5){
+        alert("YOU WIN!!!");
+        window.location.reload();
+    }
+    
+    if(indexTried === 5 && rowTried === 5){
+        alert("YOU LOSE!!!");
+        window.location.reload();
+    }
+
     if (indexTried <= 5 && props === "delete") {
       console.log(indexTried);
 
@@ -107,6 +128,7 @@ function Container(props) {
 
       // console.log(indexTried)
     }
+    
     // console.log("After ",prevCount)
   };
 

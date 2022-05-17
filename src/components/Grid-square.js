@@ -1,9 +1,12 @@
-import "../styles/Grid.css"
+import "../styles/Grid.css";
 
-function Square(props){
-    return(
-     <div className="square"> {props.keyPressed} </div>
-    )
+function Square(props) {
+  return (
+    <div className="square">
+      {" "}
+      <h1 className="gridText">{props.keyPressed}</h1>{" "}
+    </div>
+  );
 }
 
-export default Square
+export default Square;

@@ -5,6 +5,8 @@
   align-items: center;
   align-content: center;
   flex-direction: column;
+  background-color: #0a0a0a;
+  height: 100vh;
 
 }
 

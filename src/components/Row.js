@@ -8,19 +8,22 @@ function Row(props) {
     function handleClick(e) {
         props.handleKey(e.currentTarget.value)
     }
+
+    
+
     if(row_num === 1){
         return(
-            <div className="row">
-                <button onClick= {handleClick} value="q">q</button>
-                <button onClick= {handleClick} value="w">w</button>
-                <button onClick= {handleClick} value="e">e</button>
-                <button onClick= {handleClick} value="r">r</button>
-                <button onClick= {handleClick} value="t">t</button>
-                <button onClick= {handleClick} value="y">y</button>
-                <button onClick= {handleClick} value="u">u</button>
-                <button onClick= {handleClick} value="i">i</button>
-                <button onClick= {handleClick} value="o">o</button>
-                <button onClick= {handleClick} value="p">p</button>
+            <div  className="row">
+                <button  onClick= {handleClick} value="q">q</button>
+                <button  onClick= {handleClick} value="w">w</button>
+                <button  onClick= {handleClick} value="e">e</button>
+                <button  onClick= {handleClick} value="r">r</button>
+                <button  onClick= {handleClick} value="t">t</button>
+                <button  onClick= {handleClick} value="y">y</button>
+                <button  onClick= {handleClick} value="u">u</button>
+                <button  onClick= {handleClick} value="i">i</button>
+                <button  onClick= {handleClick} value="o">o</button>
+                <button  onClick= {handleClick} value="p">p</button>
             </div>
         )
     }

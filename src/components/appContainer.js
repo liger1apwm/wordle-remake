@@ -28,6 +28,7 @@ function Container(props) {
   const [letterGrid, setLetterGrid] = useState(emptyGrid);
   const [rowTried, setRowTried] = useState(0);
   const [indexTried, setIndexTried] = useState(0);
+  
   // const prevCount = usePrevious(props);
 
   // useEffect(() => {
@@ -35,11 +36,11 @@ function Container(props) {
   // },[])
 
   const greenStyle = {
-    backgroundColor: "#adff2f",
+    backgroundColor: "#008000",
     marginTop: "-0.5rem",
   };
   const yellowStyle = {
-    backgroundColor: "#FFFF00",
+    backgroundColor: "#ffd700",
     marginTop: "-0.5rem",
   };
   const grayStyle = {
@@ -110,12 +111,12 @@ function Container(props) {
     }
     if(green_counter === 5){
         alert("YOU WIN!!!");
-        window.location.reload();
+        setTimeout(() => window.location.reload(), 3000);
     }
     
     if(indexTried === 5 && rowTried === 5){
-        alert("YOU LOSE!!!");
-        window.location.reload();
+        alert("YOU LOSE!!! correct word is: world");
+        setTimeout(() => window.location.reload(), 3000);
     }
 
     if (indexTried <= 5 && props === "delete") {
@@ -132,10 +133,12 @@ function Container(props) {
     // console.log("After ",prevCount)
   };
 
+  
+
   return (
     <div id="Container">
       <nav>
-        <h3>WORDLE</h3>
+        <h3 style={{color:'white'}}>WORDLE</h3>
       </nav>
       <Grid
         keyPressed={keyPressed}
